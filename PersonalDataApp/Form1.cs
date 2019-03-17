@@ -14,6 +14,10 @@ namespace PersonalDataApp
         public Form1()
         {
             InitializeComponent();
+
+            //Database db = new Database();
+            //db.open();
+            //db.close();
         }
     }
 }
