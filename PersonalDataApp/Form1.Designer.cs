@@ -528,6 +528,7 @@
             this.buttonFilterPalgad.TabIndex = 13;
             this.buttonFilterPalgad.Text = "Filter output";
             this.buttonFilterPalgad.UseVisualStyleBackColor = true;
+            this.buttonFilterPalgad.Click += new System.EventHandler(this.buttonFilterPalgad_Click);
             // 
             // label6
             // 
@@ -545,7 +546,7 @@
             this.buttonRefreshPalgad.Name = "buttonRefreshPalgad";
             this.buttonRefreshPalgad.Size = new System.Drawing.Size(57, 23);
             this.buttonRefreshPalgad.TabIndex = 7;
-            this.buttonRefreshPalgad.Text = "Refresh";
+            this.buttonRefreshPalgad.Text = "Reset";
             this.buttonRefreshPalgad.UseVisualStyleBackColor = true;
             this.buttonRefreshPalgad.Click += new System.EventHandler(this.buttonRefreshPalgad_Click);
             // 
@@ -585,6 +586,7 @@
             this.buttonFilterPKT.TabIndex = 19;
             this.buttonFilterPKT.Text = "Filter output";
             this.buttonFilterPKT.UseVisualStyleBackColor = true;
+            this.buttonFilterPKT.Click += new System.EventHandler(this.buttonFilterPKT_Click);
             // 
             // label7
             // 
@@ -602,7 +604,7 @@
             this.buttonRefreshPKT.Name = "buttonRefreshPKT";
             this.buttonRefreshPKT.Size = new System.Drawing.Size(57, 23);
             this.buttonRefreshPKT.TabIndex = 14;
-            this.buttonRefreshPKT.Text = "Refresh";
+            this.buttonRefreshPKT.Text = "Reset";
             this.buttonRefreshPKT.UseVisualStyleBackColor = true;
             this.buttonRefreshPKT.Click += new System.EventHandler(this.buttonRefreshPKT_Click);
             // 

@@ -11,8 +11,6 @@ namespace PersonalDataApp
 {
     public partial class Form1 : Form
     {
-        object test;
-
         public Form1()
         {
             InitializeComponent();
@@ -793,6 +791,60 @@ namespace PersonalDataApp
                     }
 
                     buttonRefreshTooaeg_Click(sender, e);
+                }
+            }
+        }
+
+        private void buttonFilterPalgad_Click(object sender, EventArgs e)
+        {
+            FormFilterPalgad dlg = new FormFilterPalgad();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                DataTable tb = new DataTable();
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        tb = db.table("EXEC proc_palk @Kuu = " + dlg.Kuu + ", @Aasta = " + dlg.Aasta + ", @idPersonal = " + dlg.IdP);
+                        dataGridView6.DataSource = tb;
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    db.close();
+                }
+            }
+        }
+
+        private void buttonFilterPKT_Click(object sender, EventArgs e)
+        {
+            FormFilterPersonal dlg = new FormFilterPersonal();
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                DataTable tb = new DataTable();
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        tb = db.table("proc_personal @Keel = '" + dlg.Keel + "', @Tase = '" + dlg.Tase + "', @VanusAlates = " + dlg.VanusAlates + ", @VanusKuni = " + dlg.VanusKuni + ", @Sugu = " + dlg.Sugu);
+                        dataGridView7.DataSource = tb;
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    db.close();
                 }
             }
         }

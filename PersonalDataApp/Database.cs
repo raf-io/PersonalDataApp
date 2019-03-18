@@ -36,7 +36,7 @@ namespace PersonalDataApp
                 dbc.Open();
                 connected = true;
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Cannot connect to database server!", "Connection error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
@@ -68,7 +68,7 @@ namespace PersonalDataApp
             {
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Cannot execute query!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
