@@ -486,7 +486,7 @@ namespace PersonalDataApp
 
         private void buttonAddPersonal_Click(object sender, EventArgs e)
         {
-            FormPersonal dlg = new FormPersonal("New person", "Add to personal", "Add");
+            FormPersonal dlg = new FormPersonal("New person", "Add to personal", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -513,16 +513,14 @@ namespace PersonalDataApp
         private void buttonEditPersonal_Click(object sender, EventArgs e)
         {
             int id = 0;
-            string perekonnanimi = "";
-            string eesnimi = "";
-            byte sugu = 0;
-            FormPersonal dlg = new FormPersonal("Edit person", "Edit personal", "Save");
 
             try
             {
                 id = Convert.ToInt32(dataGridView1[0, dataGridView1.CurrentRow.Index].Value.ToString());
             }
             catch (NullReferenceException) { }
+
+            FormPersonal dlg = new FormPersonal("Edit person", "Edit personal", "Save", id);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -534,7 +532,8 @@ namespace PersonalDataApp
                     try
                     {
                         db.cmd_exec("UPDATE [dbo].[Personal] SET"
-                            + " VALUES('" + dlg.Perekonnanimi + "', '" + dlg.Eesnimi + "', '" + dlg.Sugu + "', '" + dlg.Sunnipaev + "', '" + dlg.Palk + "')");
+                            + " Perekonnanimi = '" + dlg.Perekonnanimi + "', Eesnimi = '" + dlg.Eesnimi + "', Sugu = '" + dlg.Sugu + "', Sunnipaev = '" + dlg.Sunnipaev + "', Palk = '" + dlg.Palk + "'"
+                            + " WHERE Id = '" + dlg.Id + "'");
                     }
                     catch (Exception)
                     {

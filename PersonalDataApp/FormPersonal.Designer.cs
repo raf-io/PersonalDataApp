@@ -42,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAddEdit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPalk)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +121,11 @@
             // numPalk
             // 
             this.numPalk.DecimalPlaces = 2;
+            this.numPalk.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.numPalk.Location = new System.Drawing.Point(137, 128);
             this.numPalk.Name = "numPalk";
             this.numPalk.Size = new System.Drawing.Size(181, 20);
@@ -180,21 +184,11 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // textId
-            // 
-            this.textId.Location = new System.Drawing.Point(12, 9);
-            this.textId.Name = "textId";
-            this.textId.ReadOnly = true;
-            this.textId.Size = new System.Drawing.Size(25, 20);
-            this.textId.TabIndex = 5;
-            this.textId.Visible = false;
-            // 
             // FormPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 241);
-            this.Controls.Add(this.textId);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddEdit);
             this.Controls.Add(this.groupBox1);
@@ -228,6 +222,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonAddEdit;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.TextBox textId;
     }
 }

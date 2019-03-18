@@ -11,27 +11,61 @@ namespace PersonalDataApp
 {
     public partial class FormPersonal : Form
     {
-        public FormPersonal(string title, string label, string button)
+        private int id;
+
+        public FormPersonal(string title, string label, string button, int id)
         {
             InitializeComponent();
 
             this.Text = title;
             label1.Text = label;
             buttonAddEdit.Text = button;
+            this.id = id;
 
             comboBoxSugu.Items.Add(new ComboItem(1, "Mees"));
             comboBoxSugu.Items.Add(new ComboItem(2, "Naine"));
+
+            if(id > 0)
+            {
+                DataTable tb = new DataTable();
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        tb = db.table("SELECT * FROM [dbo].[Personal] WHERE Id = '" + id.ToString() + "'");
+                        textPerekonnanimi.Text = tb.Rows[0]["Perekonnanimi"].ToString();
+                        textEesnimi.Text = tb.Rows[0]["Eesnimi"].ToString();
+                        dateSunnipaev.Value = DateTime.Parse(tb.Rows[0]["Sunnipaev"].ToString());
+                        numPalk.Value = Convert.ToDecimal(tb.Rows[0]["Palk"]);
+
+                        for (int i = 0; i < comboBoxSugu.Items.Count; i++)
+                        {
+                            ComboItem item = comboBoxSugu.Items[i] as ComboItem;
+
+                            if (item.Key == Convert.ToInt32(tb.Rows[0]["Sugu"]))
+                            {
+                                comboBoxSugu.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    catch (Exception exc)
+                    {
+                        MessageBox.Show(exc.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    db.close();
+                }
+            }
         }
 
         public string Id
         {
             get
             {
-                return textId.Text;
-            }
-            set
-            {
-                textId.Text = value;
+                return id.ToString();
             }
         }
 
@@ -39,11 +73,7 @@ namespace PersonalDataApp
         {
             get
             {
-                return textPerekonnanimi.Text;
-            }
-            set
-            {
-                textPerekonnanimi.Text = value;
+                return textPerekonnanimi.Text.Replace("'", "''");
             }
         }
 
@@ -51,11 +81,7 @@ namespace PersonalDataApp
         {
             get
             {
-                return textEesnimi.Text;
-            }
-            set
-            {
-                textEesnimi.Text = value;
+                return textEesnimi.Text.Replace("'", "''");
             }
         }
 
@@ -67,10 +93,6 @@ namespace PersonalDataApp
 
                 return item.Key.ToString();
             }
-            set
-            {
-                comboBoxSugu.SelectedItem = value;
-            }
         }
 
         public string Sunnipaev
@@ -79,22 +101,14 @@ namespace PersonalDataApp
             {
                 return dateSunnipaev.Value.ToString("yyyy-MM-dd");
             }
-            /*set
-            {
-                dateSunnipaev.Value = value;
-            }*/
         }
 
         public string Palk
         {
             get
             {
-                return numPalk.Value.ToString();
+                return numPalk.Value.ToString().Replace(",", ".");
             }
-            /*set
-            {
-                numPalk.Value = value;
-            }*/
         }
     }
 }
