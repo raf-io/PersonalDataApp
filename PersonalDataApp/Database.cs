@@ -60,7 +60,7 @@ namespace PersonalDataApp
 
         public void cmd_exec(string sql)
         {
-            dbc.Open();
+            //dbc.Open();
             cmd.CommandText = sql;
             cmd.Connection = dbc;
 

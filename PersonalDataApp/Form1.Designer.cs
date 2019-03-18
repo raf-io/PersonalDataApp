@@ -140,6 +140,7 @@
             this.buttonEditPersonal.TabIndex = 10;
             this.buttonEditPersonal.Text = "Edit";
             this.buttonEditPersonal.UseVisualStyleBackColor = true;
+            this.buttonEditPersonal.Click += new System.EventHandler(this.buttonEditPersonal_Click);
             // 
             // buttonAddPersonal
             // 
@@ -149,6 +150,7 @@
             this.buttonAddPersonal.TabIndex = 9;
             this.buttonAddPersonal.Text = "Add";
             this.buttonAddPersonal.UseVisualStyleBackColor = true;
+            this.buttonAddPersonal.Click += new System.EventHandler(this.buttonAddPersonal_Click);
             // 
             // buttonRemovePersonal
             // 
@@ -158,6 +160,7 @@
             this.buttonRemovePersonal.TabIndex = 8;
             this.buttonRemovePersonal.Text = "Remove";
             this.buttonRemovePersonal.UseVisualStyleBackColor = true;
+            this.buttonRemovePersonal.Click += new System.EventHandler(this.buttonRemovePersonal_Click);
             // 
             // buttonRefreshPersonal
             // 
@@ -233,6 +236,7 @@
             this.buttonRemoveKeeled.TabIndex = 8;
             this.buttonRemoveKeeled.Text = "Remove";
             this.buttonRemoveKeeled.UseVisualStyleBackColor = true;
+            this.buttonRemoveKeeled.Click += new System.EventHandler(this.buttonRemoveKeeled_Click);
             // 
             // buttonRefreshKeeled
             // 
@@ -308,6 +312,7 @@
             this.buttonRemovePK.TabIndex = 8;
             this.buttonRemovePK.Text = "Remove";
             this.buttonRemovePK.UseVisualStyleBackColor = true;
+            this.buttonRemovePK.Click += new System.EventHandler(this.buttonRemovePK_Click);
             // 
             // buttonRefreshPK
             // 
@@ -383,6 +388,7 @@
             this.buttonRemoveKT.TabIndex = 8;
             this.buttonRemoveKT.Text = "Remove";
             this.buttonRemoveKT.UseVisualStyleBackColor = true;
+            this.buttonRemoveKT.Click += new System.EventHandler(this.buttonRemoveKT_Click);
             // 
             // buttonRefreshKT
             // 
@@ -458,6 +464,7 @@
             this.buttonRemoveTooaeg.TabIndex = 8;
             this.buttonRemoveTooaeg.Text = "Remove";
             this.buttonRemoveTooaeg.UseVisualStyleBackColor = true;
+            this.buttonRemoveTooaeg.Click += new System.EventHandler(this.buttonRemoveTooaeg_Click);
             // 
             // buttonRefreshTooaeg
             // 
@@ -600,7 +607,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Personal data";
             this.tabPersonalData.ResumeLayout(false);
             this.tabPersonal.ResumeLayout(false);
             this.tabPersonal.PerformLayout();
