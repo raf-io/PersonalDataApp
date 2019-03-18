@@ -26,7 +26,7 @@ namespace PersonalDataApp
 
         public Database()
         {
-            dbc.ConnectionString = "Server=localhost; uid=sa; pwd=vmware; database=personal";
+            dbc.ConnectionString = "Server=localhost; uid=sa; pwd=password; database=personal";
         }
 
         public void open()
