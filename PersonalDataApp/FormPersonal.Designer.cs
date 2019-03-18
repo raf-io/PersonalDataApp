@@ -59,9 +59,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(62, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 29);
+            this.label1.Size = new System.Drawing.Size(224, 29);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Add/Edit to Personal";
+            this.label1.Text = "Add/Edit Personal";
             // 
             // groupBox1
             // 

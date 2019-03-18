@@ -11,6 +11,8 @@ namespace PersonalDataApp
 {
     public partial class Form1 : Form
     {
+        object test;
+
         public Form1()
         {
             InitializeComponent();
@@ -505,6 +507,7 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshPersonal_Click(sender, e);
                 }
             }
@@ -540,6 +543,7 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshPersonal_Click(sender, e);
                 }
             }
@@ -547,7 +551,7 @@ namespace PersonalDataApp
 
         private void buttonAddKeeled_Click(object sender, EventArgs e)
         {
-            /*FormKeeled dlg = new FormKeeled("New entry", "Add to keeled", "Add", 0);
+            FormKeeled dlg = new FormKeeled("New entry", "Add to keeled", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -565,14 +569,15 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshKeeled_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonEditKeeled_Click(object sender, EventArgs e)
         {
-            /*int id = 0;
+            int id = 0;
 
             try
             {
@@ -598,24 +603,29 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshKeeled_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonAddPK_Click(object sender, EventArgs e)
         {
-            /*FormPersonalKeeled dlg = new FormPersonalKeeled("New entry", "Add to PersonalKeeled", "Add", 0);
+            FormPersonalKeeled dlg = new FormPersonalKeeled("New entry", "Add to PersonalKeeled", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 Database db = new Database();
                 db.open();
 
+                MessageBox.Show("INSERT INTO [dbo].[PersonalKeeled] (idPersonal, idKeeled, Tase)"
+                        + " VALUES('" + dlg.IdP + "', '" + dlg.IdK + "', '" + dlg.Tase + "')");
+
                 if (db.Connected)
                 {
                     try
                     {
+                        
                         db.cmd_exec("INSERT INTO [dbo].[PersonalKeeled] (idPersonal, idKeeled, Tase)"
                         + " VALUES('" + dlg.IdP + "', '" + dlg.IdK + "', '" + dlg.Tase + "')");
                     }
@@ -624,14 +634,17 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshPK_Click(sender, e);
                 }
-            }*/
+
+
+            }
         }
 
         private void buttonEditPK_Click(object sender, EventArgs e)
         {
-            /*int id = 0;
+            int id = 0;
 
             try
             {
@@ -659,14 +672,15 @@ namespace PersonalDataApp
                         MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
+                    db.close();
                     buttonRefreshPK_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonAddKT_Click(object sender, EventArgs e)
         {
-            /*FormKeeleTasud dlg = new FormKeeleTasud("New entry", "Add to KeeleTasud", "Add", 0);
+            FormKeeleTasud dlg = new FormKeeleTasud("New entry", "Add to KeeleTasud", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -686,16 +700,16 @@ namespace PersonalDataApp
 
                     buttonRefreshKT_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonEditKT_Click(object sender, EventArgs e)
         {
-            /*int id = 0;
+            int id = 0;
 
             try
             {
-                id = Convert.ToInt32(dataGridView3[0, dataGridView3.CurrentRow.Index].Value.ToString());
+                id = Convert.ToInt32(dataGridView4[0, dataGridView4.CurrentRow.Index].Value.ToString());
             }
             catch (NullReferenceException) { }
 
@@ -719,12 +733,12 @@ namespace PersonalDataApp
 
                     buttonRefreshKT_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonAddTooaeg_Click(object sender, EventArgs e)
         {
-            /*FormTooaeg dlg = new FormTooaeg("New entry", "Add to tooaeg", "Add", 0);
+            FormTooaeg dlg = new FormTooaeg("New entry", "Add to tooaeg", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -745,20 +759,20 @@ namespace PersonalDataApp
 
                     buttonRefreshTooaeg_Click(sender, e);
                 }
-            }*/
+            }
         }
 
         private void buttonEditTooaeg_Click(object sender, EventArgs e)
         {
-            /*int id = 0;
+            int id = 0;
 
             try
             {
-                id = Convert.ToInt32(dataGridView3[0, dataGridView3.CurrentRow.Index].Value.ToString());
+                id = Convert.ToInt32(dataGridView5[0, dataGridView5.CurrentRow.Index].Value.ToString());
             }
             catch (NullReferenceException) { }
 
-            FormKeeleTasud dlg = new FormKeeleTasud("Edit entry", "Edit Tooaeg", "Save", id);
+            FormTooaeg dlg = new FormTooaeg("Edit entry", "Edit Tooaeg", "Save", id);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -780,7 +794,7 @@ namespace PersonalDataApp
 
                     buttonRefreshTooaeg_Click(sender, e);
                 }
-            }*/
+            }
         }
     }
 }
