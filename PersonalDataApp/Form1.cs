@@ -486,7 +486,7 @@ namespace PersonalDataApp
 
         private void buttonAddPersonal_Click(object sender, EventArgs e)
         {
-            FormPersonal dlg = new FormPersonal("New person", "Add to personal", "Add", 0);
+            FormPersonal dlg = new FormPersonal("New entry", "Add to personal", "Add", 0);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -520,7 +520,7 @@ namespace PersonalDataApp
             }
             catch (NullReferenceException) { }
 
-            FormPersonal dlg = new FormPersonal("Edit person", "Edit personal", "Save", id);
+            FormPersonal dlg = new FormPersonal("Edit entry", "Edit personal", "Save", id);
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -537,12 +537,250 @@ namespace PersonalDataApp
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                        MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                     }
 
                     buttonRefreshPersonal_Click(sender, e);
                 }
             }
+        }
+
+        private void buttonAddKeeled_Click(object sender, EventArgs e)
+        {
+            /*FormKeeled dlg = new FormKeeled("New entry", "Add to keeled", "Add", 0);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("INSERT INTO [dbo].[Keeled] (Keel) VALUES('" + dlg.Keel + "')");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshKeeled_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonEditKeeled_Click(object sender, EventArgs e)
+        {
+            /*int id = 0;
+
+            try
+            {
+                id = Convert.ToInt32(dataGridView2[0, dataGridView2.CurrentRow.Index].Value.ToString());
+            }
+            catch (NullReferenceException) { }
+
+            FormKeeled dlg = new FormKeeled("Edit entry", "Edit keeled", "Save", id);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("UPDATE [dbo].[Keeled] SET Keel = '" + dlg.Keel + "' WHERE Id = '" + dlg.Id + "'");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshKeeled_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonAddPK_Click(object sender, EventArgs e)
+        {
+            /*FormPersonalKeeled dlg = new FormPersonalKeeled("New entry", "Add to PersonalKeeled", "Add", 0);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("INSERT INTO [dbo].[PersonalKeeled] (idPersonal, idKeeled, Tase)"
+                        + " VALUES('" + dlg.IdP + "', '" + dlg.IdK + "', '" + dlg.Tase + "')");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshPK_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonEditPK_Click(object sender, EventArgs e)
+        {
+            /*int id = 0;
+
+            try
+            {
+                id = Convert.ToInt32(dataGridView3[0, dataGridView3.CurrentRow.Index].Value.ToString());
+            }
+            catch (NullReferenceException) { }
+
+            FormPersonalKeeled dlg = new FormPersonalKeeled("Edit entry", "Edit PersonalKeeled", "Save", id);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("UPDATE [dbo].[PersonalKeeled]"
+                        + " SET idPersonal = '" + dlg.IdP + "', idKeeled = '" + dlg.IdK + "', Tase = '" + dlg.Tase + "'"
+                        + " WHERE Id = '" + dlg.Id + "'");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshPK_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonAddKT_Click(object sender, EventArgs e)
+        {
+            /*FormKeeleTasud dlg = new FormKeeleTasud("New entry", "Add to KeeleTasud", "Add", 0);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("INSERT INTO [dbo].[KeeleTasud] (Tase, Summa) VALUES('" + dlg.Tase + "', '" + dlg.Summa + "')");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshKT_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonEditKT_Click(object sender, EventArgs e)
+        {
+            /*int id = 0;
+
+            try
+            {
+                id = Convert.ToInt32(dataGridView3[0, dataGridView3.CurrentRow.Index].Value.ToString());
+            }
+            catch (NullReferenceException) { }
+
+            FormKeeleTasud dlg = new FormKeeleTasud("Edit entry", "Edit KeeleTasud", "Save", id);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("UPDATE [dbo].[KeeleTasud] SET Tase = '" + dlg.Tase + "', Summa = '" + dlg.Summa + "' WHERE Id = '" + dlg.Id + "'");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshKT_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonAddTooaeg_Click(object sender, EventArgs e)
+        {
+            /*FormTooaeg dlg = new FormTooaeg("New entry", "Add to tooaeg", "Add", 0);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("INSERT INTO [dbo].[Tooaeg] (idPersonal, Kuupaev, Tootunnid)"
+                        + " VALUES('" + dlg.IdP + "', '" + dlg.Kuupaev + "', '" + dlg.Tootunnid + "')");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry add fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshTooaeg_Click(sender, e);
+                }
+            }*/
+        }
+
+        private void buttonEditTooaeg_Click(object sender, EventArgs e)
+        {
+            /*int id = 0;
+
+            try
+            {
+                id = Convert.ToInt32(dataGridView3[0, dataGridView3.CurrentRow.Index].Value.ToString());
+            }
+            catch (NullReferenceException) { }
+
+            FormKeeleTasud dlg = new FormKeeleTasud("Edit entry", "Edit Tooaeg", "Save", id);
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                Database db = new Database();
+                db.open();
+
+                if (db.Connected)
+                {
+                    try
+                    {
+                        db.cmd_exec("UPDATE [dbo].[Tooaeg]"
+                        + " SET idPersonal = '" + dlg.IdP + "', Kuupaev = '" + dlg.Kuupaev + "', Tootunnid = '" + dlg.Tootunnid + "'"
+                        + " WHERE Id = '" + dlg.Id + "'");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Entry edit fail!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+
+                    buttonRefreshTooaeg_Click(sender, e);
+                }
+            }*/
         }
     }
 }

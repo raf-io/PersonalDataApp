@@ -218,6 +218,7 @@
             this.buttonEditKeeled.TabIndex = 10;
             this.buttonEditKeeled.Text = "Edit";
             this.buttonEditKeeled.UseVisualStyleBackColor = true;
+            this.buttonEditKeeled.Click += new System.EventHandler(this.buttonEditKeeled_Click);
             // 
             // buttonAddKeeled
             // 
@@ -227,6 +228,7 @@
             this.buttonAddKeeled.TabIndex = 9;
             this.buttonAddKeeled.Text = "Add";
             this.buttonAddKeeled.UseVisualStyleBackColor = true;
+            this.buttonAddKeeled.Click += new System.EventHandler(this.buttonAddKeeled_Click);
             // 
             // buttonRemoveKeeled
             // 
@@ -294,6 +296,7 @@
             this.buttonEditPK.TabIndex = 10;
             this.buttonEditPK.Text = "Edit";
             this.buttonEditPK.UseVisualStyleBackColor = true;
+            this.buttonEditPK.Click += new System.EventHandler(this.buttonEditPK_Click);
             // 
             // buttonAddPK
             // 
@@ -303,6 +306,7 @@
             this.buttonAddPK.TabIndex = 9;
             this.buttonAddPK.Text = "Add";
             this.buttonAddPK.UseVisualStyleBackColor = true;
+            this.buttonAddPK.Click += new System.EventHandler(this.buttonAddPK_Click);
             // 
             // buttonRemovePK
             // 
@@ -370,6 +374,7 @@
             this.buttonEditKT.TabIndex = 10;
             this.buttonEditKT.Text = "Edit";
             this.buttonEditKT.UseVisualStyleBackColor = true;
+            this.buttonEditKT.Click += new System.EventHandler(this.buttonEditKT_Click);
             // 
             // buttonAddKT
             // 
@@ -379,6 +384,7 @@
             this.buttonAddKT.TabIndex = 9;
             this.buttonAddKT.Text = "Add";
             this.buttonAddKT.UseVisualStyleBackColor = true;
+            this.buttonAddKT.Click += new System.EventHandler(this.buttonAddKT_Click);
             // 
             // buttonRemoveKT
             // 
@@ -446,6 +452,7 @@
             this.buttonEditTooaeg.TabIndex = 10;
             this.buttonEditTooaeg.Text = "Edit";
             this.buttonEditTooaeg.UseVisualStyleBackColor = true;
+            this.buttonEditTooaeg.Click += new System.EventHandler(this.buttonEditTooaeg_Click);
             // 
             // buttonAddTooaeg
             // 
@@ -455,6 +462,7 @@
             this.buttonAddTooaeg.TabIndex = 9;
             this.buttonAddTooaeg.Text = "Add";
             this.buttonAddTooaeg.UseVisualStyleBackColor = true;
+            this.buttonAddTooaeg.Click += new System.EventHandler(this.buttonAddTooaeg_Click);
             // 
             // buttonRemoveTooaeg
             // 
